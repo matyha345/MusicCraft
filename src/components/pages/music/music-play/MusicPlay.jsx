@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const AppMusicPlay = () => {
+const MusicPlay = () => {
 	const [currentTrackIndex, setCurrentTrackIndex] = useState(null)
 
 	const playTrack = index => {
@@ -16,5 +16,5 @@ const AppMusicPlay = () => {
 	return <button onClick={() => playTrack(index)}>Play</button>
 }
 
-export default AppMusicPlay
+export default MusicPlay
 

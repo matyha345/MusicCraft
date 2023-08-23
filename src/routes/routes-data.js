@@ -1,6 +1,7 @@
-import AppMusic from "../components/pages/app-music/AppMusic";
+
 import Home from "../components/pages/home/Home";
 import Marketplace from "../components/pages/marketplace/Marketplace";
+import AppMusic from "../components/pages/music/AppMusic";
 import Product from "../components/pages/product/Product";
 
 

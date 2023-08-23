@@ -1,7 +1,11 @@
 import Header from '../../layout/header/Header'
-import AppMusicSearch from './app-music-search/appMusicSearch'
-import AppMusicTest from './app-music-tracks-copy/AppMusic-test'
+
+
 import MediaPlayer from '../../utils/media-player/MediaPlayer'
+import MusicSearch from './music-search/MusicSearch'
+import MusicTest from './music-tracks-copy/AppMusic-test'
+import MusicTracks from './music-tracks/MusicTracks'
+
 
 const AppMusic = () => {
 	return (
@@ -15,10 +19,11 @@ const AppMusic = () => {
 
 			<div className='flex items-start justify-between  px-10'>
 				<div>
-					<AppMusicSearch />
+					<MusicSearch />
 				</div>
 				<div>
-					<AppMusicTest />
+					{/* <MusicTest /> */}
+					<MusicTracks />
 				</div>
 			</div>
 			<div>

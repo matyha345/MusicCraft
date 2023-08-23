@@ -1,8 +1,8 @@
 
 import {SiShazam} from 'react-icons/si'
-import { data } from '../app-music-tracks-copy/AppData'
+import { data } from '../music-tracks-copy/AppData'
 import { useParams } from 'react-router-dom'
-const AppMusicTrack = () => {
+const MusicTrack = () => {
     const {id} = useParams()
 	return (
 		<>
@@ -30,4 +30,4 @@ const AppMusicTrack = () => {
 		</>
 	)
 }
-export default AppMusicTrack
+export default MusicTrack

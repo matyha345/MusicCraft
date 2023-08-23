@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { HiOutlineHome } from 'react-icons/hi'
-const AppMusicSearch = () => {
+const MusicSearch = () => {
 	return (
 		<>
 			<Link className='flex items-center bg-gray-900/40 text-slate-200 rounded-t-md p-2 hover:text-yellow-300 ' to={''}>
@@ -38,4 +38,4 @@ const AppMusicSearch = () => {
 	)
 }
 
-export default AppMusicSearch
+export default MusicSearch

@@ -1,55 +1,83 @@
-import PlayingAudio from './playing-audio/PlayingAudio'
-// import { usePlayer } from './hooks/usePlayer'
-import { useEffect, useRef, useState } from 'react'
-import { data } from '../../pages/app-music/app-music-tracks-copy/AppData'
 import { usePlayer } from './hooks/usePlayer'
+import MediaCheckWidth from './playing-audio/media-chcek-width/MediaChcekWidth'
+import {
+	BsFillSkipStartCircleFill,
+	BsFillSkipEndCircleFill
+} from 'react-icons/bs'
+import ButtonPlayingStop from './playing-audio/button-playing-stop/ButtonPlayingStop'
 
 const MediaPlayer = () => {
-	
 	const {
-		songs,
-		setSongs,
-		isPlaying,
-		setIsPlaying,
 		currentSong,
-		setCurrentSong,
-		audioElem,
 		onPlaying,
 		clickRef,
-		checkWidth
+		checkWidth,
+		isPlaying,
+		setIsPlaying,
+		audioElem,
+		skipBack,
+		skipNext
 	} = usePlayer()
 
 	return (
 		<>
-			<section className='flex bg-black/70 h-25 rounded-t-sm'>
-				<div className='w-full flex flex-col'>
-					<audio
-						src={currentSong.audio}
-						ref={audioElem}
-						onTimeUpdate={onPlaying}
-					/>
-					<PlayingAudio
-						songs={songs}
-						setSongs={setSongs}
-						isPlaying={isPlaying}
-						setIsPlaying={setIsPlaying}
-						audioElem={audioElem}
-						setCurrentSong={setCurrentSong}
-						currentSong={currentSong}
-					/>
-					<div className='w-full flex justify-center mt-3'>
-						<div className='w-96'>
-							<div
-								className=' min-w-full bg-custom-gray h-2 rounded-3xl cursor-pointer'
-								onClick={checkWidth}
-								ref={clickRef}
-							>
-								<div
-									style={{ width: `${currentSong.progress + '%'}` }}
-									className='w-0 h-full bg-green-800 rounded-3xl'
-								></div>
-							</div>
+			<section className='flex items-center bg-black/70 h-25 rounded-t-sm h-[100px] px-6 '>
+				{currentSong ? (
+					<div>
+						<audio
+							src={currentSong.hub.actions[1].uri}
+							type={currentSong.hub.actions.type}
+							ref={audioElem}
+							onTimeUpdate={onPlaying}
+						/>
+					</div>
+				) : (
+					<p>Loading...</p>
+				)}
+
+				<div className=' w-full flex justify-center relative'>
+					<div className='flex items-center absolute top-1/4 left-0 '>
+						{currentSong ? (
+							<img
+								src={currentSong.share.avatar}
+								className='h-10 rounded-lg'
+								alt=''
+							/>
+						) : (
+							<p>Loading...</p>
+						)}
+
+						{currentSong ? (
+							<p className='ml-5 text-2xl text-slate-300'>
+								{currentSong.subtitle}
+							</p>
+						) : (
+							<p>Loading...</p>
+						)}
+					</div>
+
+					<div className='flex flex-col items-center max-w-lg justify-start w-full'>
+						<div className='flex items-center'>
+							<BsFillSkipStartCircleFill
+								size={30}
+								className='mr-3 cursor-pointer'
+								onClick={skipBack}
+							/>
+							<ButtonPlayingStop
+								setIsPlaying={setIsPlaying}
+								isPlaying={isPlaying}
+							/>
+							<BsFillSkipEndCircleFill
+								size={30}
+								className='ml-3 cursor-pointer'
+								onClick={skipNext}
+							/>
 						</div>
+						<MediaCheckWidth
+							checkWidth={checkWidth}
+							currentSong={currentSong}
+							clickRef={clickRef}
+						/>
 					</div>
 				</div>
 			</section>

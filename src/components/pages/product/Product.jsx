@@ -20,11 +20,10 @@ const Product = () => {
 					<section className='container mx-auto max-w-screen-lg m-0-auto md:mt-16'>
 						<div>
 							<h1 className='text-center text-xl md:text-6xl font-bold'>
-								Build Better Products
+								Build Better Playlists
 							</h1>
 							<p className='text-center text-sm md:text-xl text-slate-500 mt-5'>
-								Powerful, self-serve product analytics to help you convert,
-								engage, and retain more users.
+								Powerful platform for creating your favorite playlists
 							</p>
 							<div className='flex justify-center mt-5'>
 								<Button>Watch Demo</Button>
@@ -38,7 +37,11 @@ const Product = () => {
 							</div>
 						</div>
 						<div className='flex items-center justify-center mt-20 p-3'>
-							<img className='rounded-xl' src='images/product/app.png' alt='img top' />
+							<img
+								className='rounded-xl'
+								src='images/product/app.png'
+								alt='img top'
+							/>
 						</div>
 
 						<section className='mt-20'>

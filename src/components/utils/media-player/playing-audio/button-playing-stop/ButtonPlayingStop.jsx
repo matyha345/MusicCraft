@@ -2,7 +2,10 @@ import { BsFillPlayCircleFill } from 'react-icons/bs'
 import { BsFillPauseCircleFill } from 'react-icons/bs'
 
 
-const ButtonPlayingStop = ({ PlayPause, isPlaying }) => {
+const ButtonPlayingStop = ({ setIsPlaying, isPlaying }) => {
+	const PlayPause = () => {
+		setIsPlaying(!isPlaying)
+	}
 	return (
 		<>
 			{isPlaying ? (

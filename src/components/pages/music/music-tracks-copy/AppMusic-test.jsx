@@ -1,7 +1,11 @@
 import { SiShazam } from 'react-icons/si'
 import { data } from './AppData'
 
-const AppMusicTest = () => {
+
+const MusicTest = () => {
+
+	
+
 	return (
 		<div className='overflow-x-hidden overflow-scroll'>
 			<div className='flex flex-wrap items-center justify-center h-[540px] overscroll-contain'>
@@ -37,4 +41,4 @@ const AppMusicTest = () => {
 	)
 }
 
-export default AppMusicTest
+export default MusicTest

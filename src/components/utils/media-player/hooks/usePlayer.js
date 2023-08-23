@@ -1,16 +1,36 @@
 import { useEffect, useRef, useState } from 'react'
-import { data } from '../../../pages/app-music/app-music-tracks-copy/AppData'
+
+import { MusicServices } from '../../../services/music.services'
+import { useQuery } from 'react-query'
 
 export const usePlayer = () => {
-	
-	const [songs, setSongs] = useState(data)
+	const {
+		isLoading,
+		data: response,
+		error
+	} = useQuery('music tracks', MusicServices.getAllTracks)
+
+	const [songs, setSongs] = useState(response?.tracks || {})
 	const [isPlaying, setIsPlaying] = useState(false)
-	const [currentSong, setCurrentSong] = useState(data[0])
+	const [currentSong, setCurrentSong] = useState(response?.tracks[0])
+
+	useEffect(() => {
+		if (
+			!isLoading &&
+			response &&
+			response.tracks &&
+			response.tracks.length > 0
+		) {
+			setCurrentSong(response.tracks[2]) // Установите первую песню как начальное значение
+		}
+	}, [isLoading, response])
 
 	const audioElem = useRef()
 
 	useEffect(() => {
-		isPlaying ? audioElem.current.play() : audioElem.current.pause()
+		if (audioElem.current) {
+			isPlaying ? audioElem.current.play() : audioElem.current.pause()
+		}
 	}, [isPlaying])
 
 	const onPlaying = () => {
@@ -38,24 +58,34 @@ export const usePlayer = () => {
 		}
 	}
 
-	// const skipBack = () => {
-	// 	const index = songs.findIndex(x => x.title == currentSong.title)
-	// 	if (index == 0) {
-	// 		setCurrentSong(songs[songs.length - 1])
-	// 	} else {
-	// 		setCurrentSong(songs[index - 1])
-	// 	}
-	// 	audioElem.current.currentTime = 0
-	// }
-	// const skipNext = () => {
-	// 	const index = songs.findIndex(x => x.title == currentSong.title)
-	// 	if (index == songs.length - 1) {
-	// 		setCurrentSong(songs[0])
-	// 	} else {
-	// 		setCurrentSong(songs[index + 1])
-	// 	}
-	// 	audioElem.current.currentTime = 0
-	// }
+	const skipBack = () => {
+		if (currentSong && currentSong.subtitle && songs.length > 0) {
+			const index = songs.findIndex(
+				track => track.subtitle === currentSong.subtitle
+			)
+			if (index === 0) {
+				setCurrentSong(songs[songs.length - 1])
+			} else {
+				setCurrentSong(songs[index - 1])
+			}
+			if (audioElem.current) {
+				audioElem.current.currentTime = 0
+			}
+		}
+	}
+
+	const skipNext = () => {
+		const index = songs.findIndex(
+			track => track.subtitle === currentSong.subtitle
+		)
+
+		if (index === songs.length - 1) {
+			setCurrentSong(songs[0])
+		} else {
+			setCurrentSong(songs[index + 1])
+		}
+		audioElem.current.currentTime = 0
+	}
 
 	return {
 		songs,
@@ -68,6 +98,12 @@ export const usePlayer = () => {
 		onPlaying,
 		clickRef,
 		checkWidth,
-		
+		skipBack,
+		skipNext,
+		isLoading,
+		error,
+		isLoading,
+		error
 	}
 }
+
