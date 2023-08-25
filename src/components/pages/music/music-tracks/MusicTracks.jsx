@@ -1,17 +1,17 @@
 import { useQuery } from 'react-query'
-import { MusicServices } from '../../../services/music.services'
+// import { MusicServices } from '../../../services/music.services'
 // import AppMusicPlay from '../app-music-play/AppMusicPlay'
 
 import { SiShazam } from 'react-icons/si'
-import ButtonPlayingStop from '../../../utils/media-player/playing-audio/button-playing-stop/ButtonPlayingStop'
-import { usePlayer } from '../../../utils/media-player/hooks/usePlayer'
+import { LocalMusicServices } from '../../../services/local.music.services'
 
 const MusicTracks = () => {
 	const {
 		isLoading,
 		data: response,
 		error
-	} = useQuery('music tracks', MusicServices.getAllTracks)
+	} = useQuery('music cards', () => LocalMusicServices.getAll())
+
 
 	return (
 		<div className='overflow-x-hidden overflow-scroll'>
@@ -19,16 +19,16 @@ const MusicTracks = () => {
 				<div>Loading...</div>
 			) : error ? (
 				<div>Error: {error.message}</div>
-			) : response && response.tracks && response.tracks.length > 0 ? (
+			) : response && response && response.length > 0 ? (
 				<div className='flex flex-wrap items-center justify-center h-[540px] overscroll-contain'>
-					{response.tracks.map((track, index) => (
+					{response.map((track, index) => (
 						<div
 							className='flex m-3 items-center bg-black/40 p-1 text-b rounded-lg '
 							key={track.key}
 						>
 							<div className='relative'>
 								<img
-									className='relative rounded-t-lg max-w-[240px]'
+									className='relative rounded-t-lg max-w-[200px]'
 									src={track.images.background}
 									height='auto'
 									alt='Images Music'
@@ -46,14 +46,6 @@ const MusicTracks = () => {
 									</div>
 								</div>
 							</div>
-							
-
-							{/* <audio className='mt-3 w-64 h-7' id={`audio-${index}`} controls>
-									<source
-										src={track.hub.actions[1].uri}
-										type={track.hub.actions.type}
-									/>
-								</audio> */}
 						</div>
 					))}
 				</div>

@@ -1,11 +1,11 @@
 import Header from '../../layout/header/Header'
+import MediaPlayers from '../../utils/local.media.player/SongMediaPlayer'
 
-
-import MediaPlayer from '../../utils/media-player/MediaPlayer'
+// import MediaPlayer from '../../utils/media-player/MediaPlayer'
 import MusicSearch from './music-search/MusicSearch'
-import MusicTest from './music-tracks-copy/AppMusic-test'
 import MusicTracks from './music-tracks/MusicTracks'
-
+// import MusicTest from './music-tracks-copy/AppMusic-test'
+// import MusicTracks from './music-tracks/MusicTracks'
 
 const AppMusic = () => {
 	return (
@@ -22,12 +22,11 @@ const AppMusic = () => {
 					<MusicSearch />
 				</div>
 				<div>
-					{/* <MusicTest /> */}
 					<MusicTracks />
 				</div>
 			</div>
 			<div>
-				<MediaPlayer />
+				<MediaPlayers />
 			</div>
 		</section>
 	)

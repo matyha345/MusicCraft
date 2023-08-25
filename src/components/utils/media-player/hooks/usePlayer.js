@@ -1,109 +1,111 @@
-import { useEffect, useRef, useState } from 'react'
+// import { useEffect, useRef, useState } from 'react'
 
-import { MusicServices } from '../../../services/music.services'
-import { useQuery } from 'react-query'
+// import { MusicServices } from '../../../services/music.services'
+// import { useQuery } from 'react-query'
 
-export const usePlayer = () => {
-	const {
-		isLoading,
-		data: response,
-		error
-	} = useQuery('music tracks', MusicServices.getAllTracks)
+// export const usePlayer = () => {
+// 	const {
+// 		isLoading,
+// 		data: response,
+// 		error
+// 	} = useQuery('music tracks', MusicServices.getAllTracks)
 
-	const [songs, setSongs] = useState(response?.tracks || {})
-	const [isPlaying, setIsPlaying] = useState(false)
-	const [currentSong, setCurrentSong] = useState(response?.tracks[0])
+// 	const [songs, setSongs] = useState(response?.tracks || [])
 
-	useEffect(() => {
-		if (
-			!isLoading &&
-			response &&
-			response.tracks &&
-			response.tracks.length > 0
-		) {
-			setCurrentSong(response.tracks[2]) // Установите первую песню как начальное значение
-		}
-	}, [isLoading, response])
+// 	const [isPlaying, setIsPlaying] = useState(false)
+// 	const [currentSong, setCurrentSong] = useState(response?.tracks[0])
 
-	const audioElem = useRef()
+// 	// console.log('response?.resources:', response)
+// 	// console.log('currentSong:', currentSong)
 
-	useEffect(() => {
-		if (audioElem.current) {
-			isPlaying ? audioElem.current.play() : audioElem.current.pause()
-		}
-	}, [isPlaying])
+// 	useEffect(() => {
+// 		if (
+// 			!isLoading &&
+// 			response &&
+// 			response.tracks &&
+// 			response.tracks.length > 0
+// 		) {
+// 			setCurrentSong(response) // Установите первую песню как начальное значение
+// 		}
+// 	}, [isLoading, response])
 
-	const onPlaying = () => {
-		const duration = audioElem.current.duration
-		const ct = audioElem.current.currentTime
+// 	const audioElem = useRef()
 
-		setCurrentSong({
-			...currentSong,
-			progress: (ct / duration) * 100,
-			length: duration
-		})
-	}
+// 	useEffect(() => {
+// 		if (audioElem.current) {
+// 			isPlaying ? audioElem.current.play() : audioElem.current.pause()
+// 		}
+// 	}, [isPlaying])
 
-	const clickRef = useRef()
+// 	const onPlaying = () => {
+// 		const duration = audioElem.current.duration
+// 		const ct = audioElem.current.currentTime
 
-	const checkWidth = event => {
-		const width = clickRef.current.clientWidth
-		const clickX =
-			event.nativeEvent.clientX - clickRef.current.getBoundingClientRect().left
-		const divProgress = (clickX / width) * 100
-		const newTime = (divProgress / 100) * currentSong.length
+// 		setCurrentSong({
+// 			...currentSong,
+// 			progress: (ct / duration) * 100,
+// 			length: duration
+// 		})
+// 	}
 
-		if (!isNaN(newTime) && isFinite(newTime)) {
-			audioElem.current.currentTime = newTime
-		}
-	}
+// 	const clickRef = useRef()
 
-	const skipBack = () => {
-		if (currentSong && currentSong.subtitle && songs.length > 0) {
-			const index = songs.findIndex(
-				track => track.subtitle === currentSong.subtitle
-			)
-			if (index === 0) {
-				setCurrentSong(songs[songs.length - 1])
-			} else {
-				setCurrentSong(songs[index - 1])
-			}
-			if (audioElem.current) {
-				audioElem.current.currentTime = 0
-			}
-		}
-	}
+// 	const checkWidth = event => {
+// 		const width = clickRef.current.clientWidth
+// 		const clickX =
+// 			event.nativeEvent.clientX - clickRef.current.getBoundingClientRect().left
+// 		const divProgress = (clickX / width) * 100
+// 		const newTime = (divProgress / 100) * currentSong.length
 
-	const skipNext = () => {
-		const index = songs.findIndex(
-			track => track.subtitle === currentSong.subtitle
-		)
+// 		if (!isNaN(newTime) && isFinite(newTime)) {
+// 			audioElem.current.currentTime = newTime
+// 		}
+// 	}
 
-		if (index === songs.length - 1) {
-			setCurrentSong(songs[0])
-		} else {
-			setCurrentSong(songs[index + 1])
-		}
-		audioElem.current.currentTime = 0
-	}
+// 	const skipBack = () => {
+// 		if (currentSong && currentSong.title && songs.length > 0) {
+// 			const index = songs.findIndex(track => track.title === currentSong.title)
+// 			if (index === 0) {
+// 				setCurrentSong(songs[songs.length - 1])
+// 			} else {
+// 				setCurrentSong(songs[index - 1])
+// 			}
+// 			if (audioElem.current) {
+// 				audioElem.current.currentTime = 0
+// 			}
+// 		}
+// 	}
 
-	return {
-		songs,
-		setSongs,
-		isPlaying,
-		setIsPlaying,
-		currentSong,
-		setCurrentSong,
-		audioElem,
-		onPlaying,
-		clickRef,
-		checkWidth,
-		skipBack,
-		skipNext,
-		isLoading,
-		error,
-		isLoading,
-		error
-	}
-}
+// 	const skipNext = () => {
+// 		if (Array.isArray(songs)) {
+// 			const index = songs.findIndex(track => track.title === currentSong.title)
+	
+// 			if (index === songs.length - 1) {
+// 				setCurrentSong(songs[0])
+// 			} else {
+// 				setCurrentSong(songs[index + 1])
+// 			}
+// 			audioElem.current.currentTime = 0
+// 		}
+// 	}
+	
 
+// 	return {
+// 		songs,
+// 		setSongs,
+// 		isPlaying,
+// 		setIsPlaying,
+// 		currentSong,
+// 		setCurrentSong,
+// 		audioElem,
+// 		onPlaying,
+// 		clickRef,
+// 		checkWidth,
+// 		skipBack,
+// 		skipNext,
+// 		isLoading,
+// 		error,
+// 		isLoading,
+// 		error
+// 	}
+// }
