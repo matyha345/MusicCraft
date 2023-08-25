@@ -8,7 +8,7 @@ import ButtonPausePlay from './playing-audio/button-playing-stop/ButtonPausePlay
 import { usePlayers } from './hooks/usePlayers'
 
 // TODO: доделать стили а точнее добавить функционал справа
-//       также сделать элемент проигрывания 
+//       также сделать элемент проигрывания
 
 const SongMediaPlayer = () => {
 	const {
@@ -78,7 +78,7 @@ const SongMediaPlayer = () => {
 							<div className='flex items-center'>
 								<BsFillSkipStartCircleFill
 									size={30}
-									className='mr-3 cursor-pointer'
+									className='mr-3 cursor-pointer transition duration-700 ease-in-out border-2 border-transparent hover:border-yellow-300 rounded-full'
 									onClick={skipBack}
 								/>
 								<ButtonPausePlay
@@ -87,7 +87,7 @@ const SongMediaPlayer = () => {
 								/>
 								<BsFillSkipEndCircleFill
 									size={30}
-									className='ml-3 cursor-pointer'
+									className='ml-3 cursor-pointer transition duration-700 ease-in-out border-2 border-transparent hover:border-yellow-300 rounded-full'
 									onClick={skipNext}
 								/>
 							</div>
