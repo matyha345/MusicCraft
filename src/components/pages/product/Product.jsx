@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import Button from '../../ui/button/Button'
 import HomeSection from '../home/home-section/HomeSection'
@@ -10,6 +10,8 @@ import ProductOver from './product-over/ProductOver'
 import Layout from '../../layout/Layout'
 
 const Product = () => {
+	const nav = useNavigate()
+
 	return (
 		<>
 			<section
@@ -26,14 +28,9 @@ const Product = () => {
 								Powerful platform for creating your favorite playlists
 							</p>
 							<div className='flex justify-center mt-5'>
-								<Button>Watch Demo</Button>
-
-								<Link
-									to={''}
-									className='ml-5 p-3 text-sm font-medium rounded border-solid border border-transparent hover:border-solid hover:border hover:border-indigo-600'
-								>
-									Sign In
-								</Link>
+								<Button clickHandler={() => nav('/app-music')}>
+									Watch Demo
+								</Button>
 							</div>
 						</div>
 						<div className='flex items-center justify-center mt-20 p-3'>
@@ -55,7 +52,7 @@ const Product = () => {
 						</section>
 
 						<section>
-							<ProductQuestions />
+							{/* <ProductQuestions /> */}
 						</section>
 					</section>
 					<section className='mb-44'>

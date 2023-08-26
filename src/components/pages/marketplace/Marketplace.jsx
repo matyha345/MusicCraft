@@ -10,15 +10,15 @@ const Marketplace = () => {
 	const data = [
 		{
 			title: '100%',
-			text: 'Manage communication more efficiently and faster'
+			text: 'Manage your time more efficiently and effectively.'
 		},
 		{
 			title: '24/7',
-			text: 'Improve communication with customers and clients'
+			text: 'We are excited to introduce our 24/7 support system'
 		},
 		{
 			title: '250K',
-			text: 'Average improvement in team efficiency and fast'
+			text: 'Manage your time more efficiently and effectively.'
 		}
 	]
 	return (
@@ -41,7 +41,7 @@ const Marketplace = () => {
 				<MarketplaceGlobal />
 				<div className='flex flex-col items-center justify-center bg-blue-700 rounded-lg text-white mt-24'>
 					<h1 className=' mt-24 font-bold text-4xl'>
-						Unlock your professional communications
+						Always Here for You: 24/7 Support Article
 					</h1>
 					<div className='flex flex-wrap gap-3 mt-9 mb-24'>
 						{data.map((data, index) => (
@@ -63,7 +63,7 @@ const Marketplace = () => {
 						<h4 className=' text-slate-600 text-sm'>
 							© 2020 Dlex, Inc. All rights reserved
 						</h4>
-						<SocialIcons customStyles={{ color: '#1211278F', }} />
+						<SocialIcons customStyles={{ color: '#1211278F' }} />
 					</div>
 				</div>
 			</div>

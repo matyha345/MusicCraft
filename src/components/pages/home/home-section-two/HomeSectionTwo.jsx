@@ -6,7 +6,9 @@ const HomeSectionTwo = () => {
 	return (
 		<section>
 			<Teg>Music World News</Teg>
-			<h1 className='max-w-xl font-bold text-4xl mt-1'>New albums, concerts, events</h1>
+			<h1 className='max-w-xl font-bold text-4xl mt-1'>
+				New albums, concerts, events
+			</h1>
 
 			<div className='mt-10 flex justify-center flex-wrap gap-2'>
 				{HomeDataSection.map((data, dataIndex) => (
@@ -25,15 +27,10 @@ const HomeSectionTwo = () => {
 								)}
 							</p>
 						</div>
-						{dataIndex === 1 ? (
-							<div className=' mt-8 relative  before:absolute md:before:content-groupBefor before:bottom-[-20px] before:right-[-117px] '>
-								<img  src={data.svg} alt='' />
-							</div>
-						) : (
-							<div className=' mt-8'>
-								<img src={data.svg} alt='' />
-							</div>
-						)}
+
+						<div className=' mt-10 p-2'>
+							<img className='rounded-sm' src={data.svg} alt='' />
+						</div>
 
 						{data.checkboxOne.map((checkbox, checkboxIndex) => (
 							<div className='flex items-center mt-2' key={checkboxIndex}>

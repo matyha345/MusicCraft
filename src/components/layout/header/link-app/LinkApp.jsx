@@ -1,16 +1,15 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import Button from '../../../ui/button/Button'
 
 const LinkApp = () => {
 	const { pathname } = useLocation()
+	const nav = useNavigate()
 	return (
 		<>
 			{pathname !== '/app-music' && (
-				<Link
-					to={'/app-music'}
-					className=' bg-blue-500 text-white px-3 py-2 rounded  text-sm font-medium border-solid border border-transparent hover:border-solid hover:border hover:border-indigo-600 hover:bg-white hover:text-black'
-				>
+				<Button clickHandler={() => nav('/app-music')}>
 					Lets go listen to music
-				</Link>
+				</Button>
 			)}
 		</>
 	)

@@ -1,5 +1,5 @@
 import React from 'react'
-import Icons from './components/Icons'
+import Icons from './component/Icons'
 import { useMusicContext } from '../../MusicContext'
 
 const MusicDetail = ({ selectedTrack }) => {

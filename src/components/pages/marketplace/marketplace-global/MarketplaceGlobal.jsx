@@ -4,32 +4,29 @@ const MarketplaceGlobal = () => {
 	const textMarketplace = [
 		{
 			number: '384K+',
-			text: 'Once you’re set up, payouts arrive in your bank account.'
+			text: 'Your progress will be growing alongside us.'
 		},
 		{
 			number: '90%',
-			text: 'Once you’re set up, payouts arrive in your bank account.'
+			text: 'Your progress will be growing alongside us.'
 		},
 		{
 			number: '135+',
-			text: 'Once you’re set up, payouts arrive in your bank account.'
+			text: 'Your progress will be growing alongside us.'
 		},
 		{
 			number: '45+',
-			text: 'Once you’re set up, payouts arrive in your bank account.'
-		},
+			text: 'Your progress will be growing alongside us.'
+		}
 	]
 
 	return (
 		<section className='mt-24'>
 			<Teg>Global scale</Teg>
-			<h1 className=' font-bold text-4xl'>
-				The backbone for internet business
-			</h1>
+			<h1 className=' font-bold text-4xl'>Created for you.</h1>
 			<p className='mt-5 text-lg text-slate-500'>
-				Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-				sint. Velit officia consequat duis enim velit mollit. Exercitation
-				veniam consequat sunt nostrud amet.
+				A website for music, meticulously crafted and designed with you in mind. <br />
+				Discover a world of melodies tailored just for you.
 			</p>
 			<div className='mt-10 flex flex-wrap gap-5'>
 				{textMarketplace.map((text, index) => (

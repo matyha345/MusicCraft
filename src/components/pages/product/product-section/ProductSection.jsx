@@ -3,22 +3,22 @@ import cn from 'clsx'
 const ProductSection = () => {
 	const productData = [
 		{
-			logo: 'Article',
-			title: 'Guide for designing better mobile apps typography',
-			text: 'In this article, I won’t talk about the general concepts of typography, which can be used both in print...',
-			img: 'images/product/imgOne.jpg'
+			logo: 'Loreen',
+			title: 'Guide to Enjoyment',
+			text: 'Such a cool and catchy song ! Congrats Loreen 🎶✨💖',
+			img: 'images/product/400One.jpg'
 		},
 		{
-			logo: 'Video',
-			title: 'New Dashboard features to save you time',
-			text: 'Dashboard is the hub for millions of businesses to take action. We’ve launched dozens of new features in the Dashboard...',
-			img: 'images/product/imgThree.jpg'
+			logo: 'Peggy Gou',
+			title: 'Guide to Enjoyment',
+			text: 'I love when they chose such a limited yet iconic sound pallette...',
+			img: 'images/product/400Three.jpg'
 		},
 		{
-			logo: 'Case study',
-			title: 'Noom sees an 8% increase in authorization rates with Dlex',
-			text: 'The health platform boosted acceptance rates and expanded global coverage by switching to Dlex',
-			img: 'images/product/ImgTwo.jpg'
+			logo: 'Jain',
+			title: 'Guide to Enjoyment',
+			text: 'This song makes my body dance uncontrollably to its infectious rhythm.',
+			img: 'images/product/400Two.jpg'
 		}
 	]
 
@@ -26,16 +26,17 @@ const ProductSection = () => {
 		<div>
 			<div className='flex flex-col items-center justify-center'>
 				<div className=' max-w-lg text-center'>
-					<p className=' text-blue-500 font-medium md:text-sm '>From the blog</p>
-					<h1 className=' text-2xl md:text-5xl font-bold mt-1'>From our blog</h1>
-					<p className='font-normal text-sm md:text-xl text-slate-500 mt-3'>
-						Creativity is a highfalutin word for the work I have to do between
-						now and Tuesday.
+					<p className=' text-blue-500 font-medium md:text-sm '>Testimonials</p>
+					<h1 className=' text-2xl md:text-5xl font-bold mt-1'>Testimonials</h1>
+					<p className='font-normal text-sm md:text-sm text-slate-500 mt-3'>
+						Creativity is what will live forever, transcending time and leaving
+						an indelible mark on the world. It's the spark that ignites
+						innovation and drives progress, shaping the course of history.
 					</p>
 				</div>
 			</div>
 
-			<div className=' flex flex-wrap gap-3 justify-center mt-20'>
+			<div className=' flex flex-wrap gap-3 justify-center mt-10'>
 				{productData.map((data, index) => (
 					<div key={`_data__${index}`} className='max-w-xs'>
 						<div>
@@ -44,9 +45,9 @@ const ProductSection = () => {
 						<div className='p-3'>
 							<p
 								className={cn('text-sm font-semibold', {
-									'text-purple-500': data.logo === 'Article',
-									'text-blue-500': data.logo === 'Video',
-									'text-green-600': data.logo === 'Case study'
+									'text-purple-500': data.logo === 'Loreen',
+									'text-blue-500': data.logo === 'Peggy Gou',
+									'text-green-600': data.logo === 'Jain'
 								})}
 							>
 								{data.logo}
@@ -64,7 +65,7 @@ const ProductSection = () => {
 								</div>
 								<div className='flex flex-col p-2'>
 									<h2>Kristin Watson</h2>
-									<p>Jun 27, 2020 · 6 min read</p>
+									<p>Jun 27, 2020</p>
 								</div>
 							</div>
 						</div>

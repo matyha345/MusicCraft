@@ -22,8 +22,7 @@ export default {
 			content: {
 				sendHome: ['url("svg/send-home.svg")'],
 				iconHome: ['url("svg/icon-home.svg")'],
-				iconMen: ['url("svg/home-men.svg")'],
-				groupBefor: ['url("svg/home/groupTwoBeffor.svg")']
+				iconMen: ['url("svg/home-men.svg")']
 			}
 		}
 	},

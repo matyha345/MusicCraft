@@ -18,7 +18,7 @@ const ProductOver = () => {
 		<div className=' bg-slate-200 w-full h-[450px] pt-20 mt-20 '>
 			<div className='px-3 md:px-0 container mx-auto max-w-screen-lg m-0-auto mt-16'>
 				<h1 className='text-center text-lg md:text-6xl font-bold'>
-					Trusted by developers from over 80 country
+					Trusted by users from over 100,000 countries.
 				</h1>
 				<p className='text-center md:text-xl text-slate-500 mt-5'>
 					Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet

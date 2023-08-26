@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router-dom'
 import Button from '../../../ui/button/Button'
 
 const HomeSectionFree = () => {
+	const nav = useNavigate()
+
 	return (
 		<div className='flex flex-col md:flex-row items-center justify-between'>
 			<div>
@@ -10,7 +13,7 @@ const HomeSectionFree = () => {
 				</h1>
 			</div>
 			<div className='mt-5 md:mt-0'>
-				<Button>Get Started Now</Button>
+				<Button clickHandler={() => nav('/app-music')}>Get Started Now</Button>
 			</div>
 		</div>
 	)

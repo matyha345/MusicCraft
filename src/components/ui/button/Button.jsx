@@ -7,6 +7,7 @@ const Button = ({ customStyle, children, clickHandler = null }) => {
 		>
 			{children}
 		</button>
+		
 	)
 }
 

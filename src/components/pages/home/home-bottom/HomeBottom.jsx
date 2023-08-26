@@ -1,7 +1,11 @@
 
+import { useNavigate } from 'react-router-dom'
 import Button from '../../../ui/button/Button'
 
 const HomeBottom = ({customStyles}) => {
+
+	const nav= useNavigate()
+
 	return (
 		<section  className={customStyles}>
 			<div className='container mx-auto max-w-screen-lg m-0-auto'>
@@ -11,7 +15,7 @@ const HomeBottom = ({customStyles}) => {
 						Increase your productivity wherever you are. Start using the workflow today.
 						</h1>
 						<div className='mt-5'>
-							<Button>Sign up for free</Button>
+							<Button clickHandler={() => nav('/app-music')}>Lets go listen to music</Button>
 						</div>
 					</div>
 				</div>
