@@ -41,6 +41,9 @@ export const usePlayers = () => {
 		skipNext,
 		isLoading,
 		error,
-		audioElem
+		audioElem,
+		response,
+		setCurrentSongIndex,
+		currentSongIndex
 	}
 }

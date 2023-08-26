@@ -3,7 +3,7 @@ import { useQuery } from 'react-query'
 import { LocalMusicServices } from '../../../services/local.music.services'
 import MusicTracksCards from './music.tracks.cards/MusicTracksCards'
 import { useEffect, useState } from 'react'
-import MusicDetail from './music-detail/MusicDetail'
+import MusicDetail from './music.detail/MusicDetail'
 import { useMusicContext } from '../MusicContext'
 
 const MusicTracks = () => {

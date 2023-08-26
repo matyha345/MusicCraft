@@ -3,12 +3,10 @@ import {
 	BsFillSkipStartCircleFill,
 	BsFillSkipEndCircleFill
 } from 'react-icons/bs'
-import ButtonPausePlay from './playing-audio/button-playing-stop/ButtonPausePlay'
+import ButtonPausePlay from './playing.audio/button-playing-stop/ButtonPausePlay'
 
 import { usePlayers } from './hooks/usePlayers'
-
-// TODO: доделать стили а точнее добавить функционал справа
-//       также сделать элемент проигрывания
+import SongList from './song.list/SongList'
 
 const SongMediaPlayer = () => {
 	const {
@@ -19,7 +17,10 @@ const SongMediaPlayer = () => {
 		setIsPlaying,
 		skipBack,
 		skipNext,
-		isLoading
+		isLoading,
+		response,
+		setCurrentSongIndex,
+		currentSongIndex
 	} = usePlayers()
 
 	const handleAudio = () => {
@@ -55,23 +56,15 @@ const SongMediaPlayer = () => {
 					/>
 					<div className='w-full flex justify-center relative'>
 						<div className='flex items-center absolute top-1/4 left-0'>
-							{currentSong ? (
-								<img
-									src={currentSong.images.coverart}
-									className='h-10 rounded-lg'
-									alt=''
-								/>
-							) : (
-								<p>Error...</p>
-							)}
+							<img
+								src={currentSong.images.coverart}
+								className='h-10 rounded-lg'
+								alt='...'
+							/>
 
-							{currentSong ? (
-								<p className='ml-5 text-2xl text-slate-300'>
-									{currentSong.title}
-								</p>
-							) : (
-								<p>Error...</p>
-							)}
+							<p className='ml-5 text-2xl text-slate-300'>
+								{currentSong.title}
+							</p>
 						</div>
 
 						<div className='flex flex-col items-center max-w-lg justify-start w-full'>
@@ -92,6 +85,12 @@ const SongMediaPlayer = () => {
 								/>
 							</div>
 						</div>
+
+						<SongList
+							response={response}
+							setCurrentSongIndex={setCurrentSongIndex}
+							currentSongIndex={currentSongIndex}
+						/>
 					</div>
 				</section>
 			) : (

@@ -28,7 +28,7 @@ const Header = () => {
 						hidden: !isShow
 					})}
 				>
-					<div className='md:w-full md:flex md:items-center md:justify-between md:static bg-sky-500/90 md:bg-transparent fixed top-30 right-0 z-30 p-14 md:p-0 rounded-xl animate-fade'>
+					<div className='md:w-full md:flex md:items-center md:justify-between md:static bg-slate-400/90 md:bg-transparent fixed top-30 right-0 z-30 p-14 md:p-0 rounded-xl animate-fade'>
 						<div ref={ref} className='flex items-center flex-col md:block'>
 							{pagesData.map(index => {
 								const isActive = location.pathname === index.link

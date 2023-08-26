@@ -1,13 +1,8 @@
 import Header from '../../layout/header/Header'
 import MediaPlayers from '../../utils/local.media.player/SongMediaPlayer'
-import MusicDetail from './music.tracks/music-detail/MusicDetail'
-
-// import MediaPlayer from '../../utils/media-player/MediaPlayer'
 import MusicSearch from './music-search/MusicSearch'
 import MusicTracks from './music.tracks/MusicTracks'
 import { MusicProvider } from './MusicContext'
-// import MusicTest from './music-tracks-copy/AppMusic-test'
-// import MusicTracks from './music-tracks/MusicTracks'
 
 const AppMusic = () => {
 	return (
@@ -24,7 +19,6 @@ const AppMusic = () => {
 					<div>
 						<MusicSearch />
 					</div>
-
 					<MusicTracks />
 				</div>
 				<div>
