@@ -3,7 +3,7 @@ import { HiOutlineHome } from 'react-icons/hi'
 const MusicSearch = () => {
 	return (
 		<>
-			<Link className='flex items-center bg-gray-900/40 text-slate-200 rounded-t-md p-2 hover:text-yellow-300 ' to={''}>
+			<Link className=' absolute top-24 left-0 px-8 md:px-2 md:static flex items-center bg-gray-900/40 text-slate-200 rounded-t-md py-2 hover:text-yellow-300 ' to={''}>
 				<span className='mr-3'>
 					<HiOutlineHome size={25} />
 				</span>
@@ -12,10 +12,10 @@ const MusicSearch = () => {
 			<input
 				type='text'
 				placeholder='Search'
-				className=' mt-5 bg-transparent p-1 rounded-sm border border-transparent hover:border-inherit'
+				className='hidden md:block mt-5 bg-transparent p-1 rounded-sm border border-transparent hover:border-inherit'
 			/>
 
-			<div>
+			<div className='hidden md:block'>
 				<h1 className=' text-sm font-normal text-slate-500 mt-10'>Playlists</h1>
 				<div className='mt-5'>
 					<button className='flex items-center text-sm font-normal text-slate-500'>

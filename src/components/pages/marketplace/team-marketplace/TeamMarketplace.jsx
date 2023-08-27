@@ -10,11 +10,11 @@ const TeamMarketplace = () => {
 			</p>
 
 			<div className='flex mt-20'>
-				<div className='flex flex-wrap gap-14 justify-center px-7'>
+				<div className='flex flex-wrap gap-[30px] justify-center px-7'>
 					{teamData.map((data, index) => (
-						<div key={`team_${index}`} className='flex items-center flex-col'>
+						<div key={`team_${index}`} className='flex items-center flex-col relative'>
 							<img className=' rounded-full' src={data.img} alt='' />
-							<h1 className=' font-bold text-sm text-slate-500/75 mt-1'>
+							<h1 className=' absolute top-1/2 right-16 bg-white/50 rounded-r-xl text-black/80 md:static font-bold text-sm md:text-slate-500/75 mt-1'>
 								{data.title}
 							</h1>
 						</div>

@@ -15,35 +15,37 @@ const SongList = ({ response, setCurrentSongIndex, currentSongIndex }) => {
 					hidden: !isShow
 				})}
 			>
-				<div ref={ref} className=' absolute bottom-1 left-0 animate-fade'>
-					<div className='gird grid-cols-1 bg-slate-400/90 py-3 px-10 rounded-lg'>
-						{response?.map((item, index) => (
-							<div key={item.key} className='flex items-center w-[300px]'>
-								<button
-									onClick={() => setCurrentSongIndex(index)}
-									className='flex items-center justify-between w-full mt-1  text-black/70 hover:text-black transform duration-150 ease-in-out hover:scale-110 '
-								>
-									<div className='flex items-center '>
-										<img
-											src={item.images.coverart}
-											className='h-8 rounded-lg'
-											alt={item.images.subject}
-										/>
-										<p className='ml-5 mt-1 font-semibold text-sm'>
-											{item.title}
-										</p>
-									</div>
-									{setCurrentSongIndex && (
-										<AiFillPlayCircle
-											size={20}
-											className={cn('text-white', {
-												' hidden': index !== currentSongIndex
-											})}
-										/>
-									)}
-								</button>
-							</div>
-						))}
+				<div className='absolute bottom-20 left-[-200px]  md:h-auto md:bottom-10 md:left-0 animate-fade'>
+					<div ref={ref} className=' w-52 md:w-96 h-96 overflow-auto '>
+						<div className=' bg-slate-800/80 py-1 px-5 md:py-3 md:px-10 rounded-lg'>
+							{response?.map((item, index) => (
+								<div key={item.key} className='md:w-[300px]'>
+									<button
+										onClick={() => setCurrentSongIndex(index)}
+										className='flex items-center justify-between w-full mt-1  text-white hover:text-white/30 transform duration-150 ease-in-out hover:scale-110 '
+									>
+										<div className='flex items-center '>
+											<img
+												src={item.images.coverart}
+												className='h-8 rounded-lg'
+												alt={item.images.subject}
+											/>
+											<p className=' text-start ml-5 mt-1 font-semibold text-sm'>
+												{item.title}
+											</p>
+										</div>
+										{setCurrentSongIndex && (
+											<AiFillPlayCircle
+												size={20}
+												className={cn('text-white', {
+													' hidden': index !== currentSongIndex
+												})}
+											/>
+										)}
+									</button>
+								</div>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>

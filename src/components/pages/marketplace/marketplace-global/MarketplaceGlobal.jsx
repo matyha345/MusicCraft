@@ -21,14 +21,14 @@ const MarketplaceGlobal = () => {
 	]
 
 	return (
-		<section className='mt-24'>
+		<section className='mt-24 px-2 md:px-0'>
 			<Teg>Global scale</Teg>
 			<h1 className=' font-bold text-4xl'>Created for you.</h1>
 			<p className='mt-5 text-lg text-slate-500'>
 				A website for music, meticulously crafted and designed with you in mind. <br />
 				Discover a world of melodies tailored just for you.
 			</p>
-			<div className='mt-10 flex flex-wrap gap-5'>
+			<div className='mt-5 md:mt-10 flex flex-wrap gap-5'>
 				{textMarketplace.map((text, index) => (
 					<div
 						key={`text__${index}`}

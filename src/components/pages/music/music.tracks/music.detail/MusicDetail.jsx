@@ -7,7 +7,7 @@ const MusicDetail = ({ selectedTrack }) => {
 	const firstItem = response && response.length > 0 ? response[0] : null
 
 	return (
-		<div>
+		<div className='flex items-center md:block'>
 			{selectedTrack || firstItem ? (
 				<div className='flex flex-col items-center max-w-full '>
 					<img
@@ -16,7 +16,7 @@ const MusicDetail = ({ selectedTrack }) => {
 						height='auto'
 						alt='Images Music'
 					/>
-					<div className='flex flex-col items-start w-full'>
+					<div className='flex flex-col items-start justify-center w-full'>
 						<div className='flex flex-col mt-3'>
 							<h2 className='text-sm font-bold text-slate-200 max-w-sm'>
 								{(selectedTrack || firstItem)?.title}

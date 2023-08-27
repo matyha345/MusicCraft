@@ -62,7 +62,7 @@ const SongMediaPlayer = () => {
 								alt='...'
 							/>
 
-							<p className='ml-5 text-2xl text-slate-300'>
+							<p className='hidden md:block ml-5 text-2xl text-slate-300'>
 								{currentSong.title}
 							</p>
 						</div>

@@ -10,7 +10,7 @@ const HomeSectionTwo = () => {
 				New albums, concerts, events
 			</h1>
 
-			<div className='mt-10 flex justify-center flex-wrap gap-2'>
+			<div className='mt-10 px-2 md:px-0 flex justify-center flex-wrap gap-2'>
 				{HomeDataSection.map((data, dataIndex) => (
 					<div className='max-w-[440px]' key={dataIndex}>
 						<div className='flex flex-col'>
@@ -27,11 +27,15 @@ const HomeSectionTwo = () => {
 								)}
 							</p>
 						</div>
-
-						<div className=' mt-10 p-2'>
-							<img className='rounded-sm' src={data.svg} alt='' />
-						</div>
-
+						{dataIndex === 1 ? (
+							<div className='mt-20 md:mt-10 p-2'>
+								<img className='rounded-sm' src={data.svg} alt='' />
+							</div>
+						) : (
+							<div className=' mt-10 p-2'>
+								<img className='rounded-sm' src={data.svg} alt='' />
+							</div>
+						)}
 						{data.checkboxOne.map((checkbox, checkboxIndex) => (
 							<div className='flex items-center mt-2' key={checkboxIndex}>
 								<div className='rounded-full w-5 h-5 bg-blue-600 flex items-center justify-center py-1'>

@@ -4,7 +4,7 @@ import Button from '../../../ui/button/Button'
 const TopMarketplace = () => {
 	const nav = useNavigate()
 	return (
-		<section className='md:h-[800px]'>
+		<section className='h-[680px] md:h-[800px]'>
 			<div className='block border-t border-slate-500'></div>
 			<div className='flex h-full items-center'>
 				<div className='w-full flex flex-col'>
