@@ -34,7 +34,11 @@ prettier
 tailwindcss
 vite
 
+#
+
 * Примеры 
+
+#
 
 <div  display= "flex"
   align-items="center" >
@@ -44,10 +48,15 @@ vite
  <img src="./public/images/readme/Three.png" alt="Alt img" width="380" height="auto">
 </div>
 
+#
+
 * мобильная версия
+
+#
+
 <div  display= "flex"
   align-items="center" >
- <img src="./public/images/readme/bg-mobile-app.svg" alt="Alt img" width="380" height="auto">
+ <img src="./public/images/readme/mobile4.png" alt="Alt img" width="280" height="auto">
  <img src="./public/images/readme/mobile2.png" alt="Alt img" width="280" height="auto">
  <img src="./public/images/readme/mobile3.png" alt="Alt img" width="280" height="auto">
  </div>
