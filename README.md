@@ -46,6 +46,8 @@ vite
 
 * мобильная версия
  <img src="./public/images/readme/bg-mobile-app.svg" alt="Alt img" width="380" height="auto">
+ <img src="./public/images/readme/mobile2.png" alt="Alt img" width="280" height="auto">
+ <img src="./public/images/readme/mobile2.png" alt="Alt img" width="2800" height="auto">
 
 Автор:
 * Имя: Nikolai Matiukhin
