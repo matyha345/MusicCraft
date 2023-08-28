@@ -34,7 +34,7 @@ prettier
 tailwindcss
 vite
 
-* Примеры фотографий
+* Примеры 
 
 <div  display= "flex"
   align-items="center" >
@@ -44,11 +44,12 @@ vite
  <img src="./public/images/readme/Three.png" alt="Alt img" width="380" height="auto">
 </div>
 
+* мобильная версия
  <img src="./public/images/readme/bg-mobile-app.svg" alt="Alt img" width="380" height="auto">
 
 * Видео пример 
  <video width="320" height="240" controls >
-      <source src="./public//video/app-muz.mp4">
+      <source src="./public/video/app-muz.mp4">
 </video>
 
 Автор:
