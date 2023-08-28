@@ -1,13 +1,23 @@
  ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-<h1 align="center" > Добро пожаловать в репозиторий MusicCraft! </h1>
+<h1 align="center" > Welcome to the MusicCraft repository! And this is it. </h1>
+
+This pet project is a client-side part of the MusicCraft application. It is designed to handle requests and explore the capabilities of Tailwind CSS.
+
+Simulating the server-side is a simple .json server called <a href='https://github.com/matyha345/jsonMusicCatalog'>jsonMusicCatalog </a>
+
+#
+
+<h1 align="center" > Добро пожаловать в репозиторий MusicCraft. </h1>
 
 Этот пет-проект представляет собой клиентскую часть приложения MusicCraft. Он предназначен для работы с запросами и изучения возможности Tailwind CSS.
 
 За имитацию серверной части отвечает простой .json сервер. <a href='https://github.com/matyha345/jsonMusicCatalog'>jsonMusicCatalog </a>
 
-Зависимости
-Проект зависит от следующих внешних пакетов:
+Зависимости || Dependencies
+Проект зависит от следующих внешних пакетов: || The project relies on the following external packages:
+
+
 
 clsx
 react
@@ -17,8 +27,11 @@ react-query
 react-router-dom
 react-select
 swiper
-Зависимости для разработки
-Эти пакеты используются во время разработки:
+
+Зависимости для разработки || Development Dependencies
+
+
+Эти пакеты используются во время разработки || These packages are used during development:
 
 @types/react
 @types/react-dom
@@ -36,7 +49,7 @@ vite
 
 #
 
-* Примеры 
+* Примеры || Examples
 
 #
 
@@ -50,7 +63,7 @@ vite
 
 #
 
-* мобильная версия
+* мобильная версия || Mobile Version
 
 #
 
@@ -62,7 +75,7 @@ vite
  <img src="./public/images/readme/mobile5.png" alt="Alt img" width="280" height="auto">
  </div>
 
-Автор:
-* Имя: Nikolai Matiukhin
+Автор || Author:
+* Имя || Name: Nikolai Matiukhin
 * <a href="https://telegram.im/@Muchakhos">Telegram</a>
-* Электронная почта: matyha345@gmail.com
+* Электронная почта || Email: matyha345@gmail.com
