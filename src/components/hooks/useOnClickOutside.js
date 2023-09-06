@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from 'react'
 
 export const useOnClickOutside = isInitialValue => {
 	const [isShow, setIsShow] = useState(isInitialValue)
+	const [isShowAuth, setIsShowAuth] = useState(isInitialValue)
 	const ref = useRef(null)
 
 	const handleClickOutside = event => {
 		if (ref.current && !ref.current.contains(event.target)) {
 			setIsShow(false)
+			setIsShowAuth(false)
 		}
 	}
 
@@ -18,5 +20,5 @@ export const useOnClickOutside = isInitialValue => {
 		}
 	})
 
-	return { ref, isShow, setIsShow }
+	return { ref, isShow, setIsShow, isShowAuth, setIsShowAuth }
 }

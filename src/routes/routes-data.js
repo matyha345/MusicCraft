@@ -10,21 +10,21 @@ export const routesData = [
     {
         path: '/',
         component: Home,
-        // isAuth: false
+        isAuth: false
     },
     {
         path: '/product',
         component: Product,
-        // isAuth: false
+        isAuth: false
     },
     {
         path: '/marketplace',
         component: Marketplace,
-        // isAuth: false
+        isAuth: false
     },
     {
         path: '/app-music',
         component: AppMusic,
-        // isAuth: false
+        isAuth: true
     }
 ]

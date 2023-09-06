@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom'
-import { HiOutlineHome } from 'react-icons/hi'
+import UserProfile from '../../../utils/user.profile/UserProfile'
 const MusicSearch = () => {
 	return (
 		<>
-			<Link className=' absolute top-24 left-0 px-8 md:px-2 md:static flex items-center bg-gray-900/40 text-slate-200 rounded-t-md py-2 hover:text-yellow-300 ' to={''}>
-				<span className='mr-3'>
-					<HiOutlineHome size={25} />
-				</span>
-				Home
-			</Link>
+			<div className=' absolute top-24 left-0 px-8 md:px-2 md:static flex items-center bg-gray-900/40 text-slate-200 rounded-t-md py-2 hover:text-yellow-300 '>
+				<UserProfile />
+			</div>
 			<input
 				type='text'
 				placeholder='Search'
@@ -18,20 +15,7 @@ const MusicSearch = () => {
 			<div className='hidden md:block'>
 				<h1 className=' text-sm font-normal text-slate-500 mt-10'>Playlists</h1>
 				<div className='mt-5'>
-					<button className='flex items-center text-sm font-normal text-slate-500'>
-						<span className='mr-4'>
-							<img src='images/app/puls.svg' alt=''/>
-						</span>
-                        Create Playlist
-					</button>
-					<button className='mt-5 flex items-center text-sm font-normal text-slate-500'>
-						<span className='mr-4'>
-							<img src='images/app/Frame.svg' alt=''/>
-						</span>
-                        Liked Songs
-					</button>
-
-                    <div className='mt-3 block border-t border-slate-500'></div>
+					<div className='mt-3 block border-t border-slate-500'></div>
 				</div>
 			</div>
 		</>

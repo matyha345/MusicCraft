@@ -6,10 +6,14 @@ import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import Burger from './burger/burger'
 import LinkApp from './link-app/LinkApp'
 
+
 const Header = () => {
+	
 	const pathname = useLocation()
 
-	const { isShow, ref, setIsShow } = useOnClickOutside(false)
+	const { isShow, ref, setIsShow, isShowAuth, setIsShowAuth } =
+		useOnClickOutside(false)
+
 	return (
 		<header className='md:flex md:items-center py-10 px-2 container mx-auto max-w-screen-lg m-0-auto'>
 			<div className='md:flex md:w-full relative'>
@@ -28,8 +32,8 @@ const Header = () => {
 						hidden: !isShow
 					})}
 				>
-					<div className='md:w-full md:flex md:items-center md:justify-between md:static bg-slate-400/90 md:bg-transparent fixed top-30 right-0 z-30 p-14 md:p-0 rounded-xl animate-fade'>
-						<div ref={ref} className='flex items-center flex-col md:block'>
+					<div ref={ref} className='md:w-full md:flex md:items-center md:justify-between md:static bg-slate-400/90 md:bg-transparent fixed top-30 right-0 z-30 p-14 md:p-0 rounded-xl animate-fade'>
+						<div  className='flex items-center flex-col md:block'>
 							{pagesData.map(index => {
 								const isActive = location.pathname === index.link
 								return (
@@ -50,7 +54,7 @@ const Header = () => {
 							})}
 						</div>
 						<div className='flex items-center mt-2 md:mt-0'>
-							<LinkApp />
+							<LinkApp isShowAuth={isShowAuth} setIsShowAuth={setIsShowAuth}  />
 						</div>
 					</div>
 				</div>
